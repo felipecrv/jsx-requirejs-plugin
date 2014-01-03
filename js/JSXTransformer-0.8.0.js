@@ -5200,7 +5200,7 @@ parseYieldExpression: true
                 break;
             }
             directive = source.slice(token.range[0] + 1, token.range[1] - 1);
-            if (directive === 'use strict') {
+            if (directive === 'use ' + 'strict') {
                 strict = true;
                 if (firstRestricted) {
                     throwErrorTolerant(firstRestricted, Messages.StrictOctalLiteral);
@@ -5744,7 +5744,7 @@ parseYieldExpression: true
                 break;
             }
             directive = source.slice(token.range[0] + 1, token.range[1] - 1);
-            if (directive === 'use strict') {
+            if (directive === 'use ' + 'strict') {
                 strict = true;
                 if (firstRestricted) {
                     throwErrorTolerant(firstRestricted, Messages.StrictOctalLiteral);
@@ -9037,7 +9037,7 @@ function traverse(node, path, state) {
         || node.body.length > 0
            && node.body[0].type === Syntax.ExpressionStatement
            && node.body[0].expression.type === Syntax.Literal
-           && node.body[0].expression.value === 'use strict';
+           && node.body[0].expression.value === 'use ' + 'strict';
 
       if (node.type === Syntax.Program) {
         state = updateState(state, {
@@ -9882,7 +9882,7 @@ function visitClassFunctionExpression(traverse, node, path, state) {
   utils.catchupWhiteSpace(node.body.range[0], state);
   utils.append('{', state);
   if (!state.scopeIsStrict) {
-    utils.append('"use strict";', state);
+    utils.append('"use ' + 'strict";', state);
   }
   utils.move(node.body.range[0] + '{'.length, state);
 
@@ -10245,7 +10245,7 @@ var load = exports.load = function(url, callback) {
 
 runScripts = function() {
   var scripts = document.getElementsByTagName('script');
-  
+
   // Array.prototype.slice cannot be used on NodeList on IE8
   var jsxScripts = [];
   for (var i = 0; i < scripts.length; i++) {
@@ -10253,7 +10253,7 @@ runScripts = function() {
       jsxScripts.push(scripts.item(i));
     }
   }
-  
+
   console.warn("You are using the in-browser JSX transformer. Be sure to precompile your JSX for production - http://facebook.github.io/react/docs/tooling-integration.html#jsx");
 
   jsxScripts.forEach(function(script) {
