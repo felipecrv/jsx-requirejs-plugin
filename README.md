@@ -1,7 +1,7 @@
 # jsx-requirejs-plugin
 
 A [RequireJS](http://requirejs.org) plugin for JavaScript files containing
-[JSX](http://facebook.github.io/react/docs/syntax.html). It's
+[JSX](http://facebook.github.io/react/docs/jsx-in-depth.html). It's
 [r.js](http://requirejs.org/docs/download.html#rjs) friendly (i.e. all
 files containing JSX will be pre-compiled during the r.js build).
 
@@ -10,7 +10,8 @@ with [RequireJS](http://requirejs.org).
 
 ## Install <a name="install"></a>
 
-Download the plugin [here](https://raw.github.com/philix/jsx-requirejs-plugin/master/jsx.js)
+Download the plugin
+[here](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/jsx.js).
 
 Place this in the directory that is your
 [baseUrl](http://requirejs.org/docs/api.html#config-baseUrl) for your project,
@@ -22,8 +23,8 @@ reimplementation of loading logic, so it should be installed as well.
 ## Usage <a name="usage"></a>
 
 First, you need to configure RequireJS to use Facebook's
-[JSXTransformer](https://raw.github.com/philix/jsx-requirejs-plugin/master/JSXTransformer-0.8.0.js)
-which also is in [React](http://facebook.github.io/react/index.html):
+[JSXTransformer](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.8.0.js)
+and [React](http://facebook.github.io/react/index.html):
 
     require.config({
       // ...
@@ -77,5 +78,5 @@ script errors in resulting files. A simple solution to this is replacing
 occurrences of `'use strict'` by an expression like `'use ' + 'strict'`.
 
 You don't have to do it if you use the
-[JSXTransformer-0.8.0.js](https://raw.github.com/philix/jsx-requirejs-plugin/master/JSXTransformer-0.8.0.js)
+[JSXTransformer-0.8.0.js](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.8.0.js)
 provided here.
