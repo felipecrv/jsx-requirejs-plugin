@@ -26,6 +26,7 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
   'use strict';
 
   var buildMap = {};
+  
 
   var jsx = {
     version: '0.1.0',
@@ -36,7 +37,8 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
           if (-1 === content.indexOf('React.DOM')) {
             content = "/** @jsx React.DOM */\n" + content;
           }
-          content = JSXTransformer.transform(content).code;
+          content = JSXTransformer.transformCode(content, name);
+          
         } catch (err) {
           err.message += ' File: ' + name + '.js: ';
           onLoadNative.error(err);
