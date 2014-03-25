@@ -2,8 +2,10 @@ require.config({
   baseUrl: "js/",
 
   paths: {
-    "react": "react-0.8.0",
-    "JSXTransformer": "JSXTransformer-0.8.0"
+    react: "react-0.10.0",
+    JSXTransformer: "JSXTransformer-0.10.0",
+    text: "text",
+    jsx: "jsx"
   }
 });
 

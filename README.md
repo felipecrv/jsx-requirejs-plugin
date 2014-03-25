@@ -8,10 +8,11 @@ files containing JSX will be pre-compiled during the r.js build).
 This is helpful when using [React](http://facebook.github.io/react/index.html)
 with [RequireJS](http://requirejs.org).
 
+Uses React/JSX 0.10.0 with source map support.
+
 ## Install <a name="install"></a>
 
-Download the plugin
-[here](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/jsx.js).
+Download the plugin [jsx](https://raw.github.com/alirussell/jsx-requirejs-plugin/master/js/jsx.js) and the modified [JSXTransformer](https://raw.github.com/alirussell/jsx-requirejs-plugin/master/js/JSXTransformer-0.10.0.js)
 
 Place this in the directory that is your
 [baseUrl](http://requirejs.org/docs/api.html#config-baseUrl) for your project,
@@ -23,15 +24,17 @@ reimplementation of loading logic, so it should be installed as well.
 ## Usage <a name="usage"></a>
 
 First, you need to configure RequireJS to use Facebook's
-[JSXTransformer](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.8.0.js)
-and [React](http://facebook.github.io/react/index.html):
+[JSXTransformer](https://raw.github.com/alirussell/jsx-requirejs-plugin/master/js/JSXTransformer-0.10.0.js)
+and [React](http://facebook.github.io/react/index.html).
+
+You need to use the included [JSXTransformer-0.10.0.js](https://raw.github.com/alirussell/jsx-requirejs-plugin/master/js/JSXTransformer-0.10.0.js), rather than the CDN version because [jsx.js](https://raw.github.com/alirussell/jsx-requirejs-plugin/master/js/jsx.js) uses a method which is not normally exported within the JSXTransformer to help with source mapping the processed JSX javascript files.
 
     require.config({
       // ...
 
       paths: {
-        "react": "react-0.8.0",
-        "JSXTransformer": "JSXTransformer-0.8.0"
+        "react": "react-0.10.0",
+        "JSXTransformer": "JSXTransformer-0.10.0"
       }
 
       // ...
@@ -78,5 +81,5 @@ script errors in resulting files. A simple solution to this is replacing
 occurrences of `'use strict'` by an expression like `'use ' + 'strict'`.
 
 You don't have to do it if you use the
-[JSXTransformer-0.8.0.js](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.8.0.js)
+[JSXTransformer-0.10.0.js](https://raw.github.com/alirussell/jsx-requirejs-plugin/master/js/JSXTransformer-0.10.0.js)
 provided here.
