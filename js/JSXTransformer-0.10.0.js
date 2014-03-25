@@ -11851,7 +11851,7 @@ var createSourceCodeErrorMessage = function(code, e) {
   return message;
 };
 
-var transformCode = function(code, source) {
+var transformCode = exports.transformCode = function(code, source) {
   var jsx = docblock.parseAsObject(docblock.extract(code)).jsx;
 
   if (jsx) {
