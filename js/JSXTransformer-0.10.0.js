@@ -1117,7 +1117,7 @@ function assert (test, message) {
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 ;(function (exports) {
-  'use strict';
+  'use ' + 'strict';
 
   var Arr = (typeof Uint8Array !== 'undefined')
     ? Uint8Array
@@ -1658,7 +1658,7 @@ parseYieldExpression: true
 */
 
 (function (root, factory) {
-    'use strict';
+    'use ' + 'strict';
 
     // Universal Module Definition (UMD) to support AMD, CommonJS/Node.js,
     // Rhino, and plain browser loading.
@@ -1670,7 +1670,7 @@ parseYieldExpression: true
         factory((root.esprima = {}));
     }
 }(this, function (exports) {
-    'use strict';
+    'use ' + 'strict';
 
     var Token,
         TokenName,
@@ -5788,7 +5788,7 @@ parseYieldExpression: true
                 break;
             }
             directive = source.slice(token.range[0] + 1, token.range[1] - 1);
-            if (directive === 'use strict') {
+            if (directive === 'use ' + 'strict') {
                 strict = true;
                 if (firstRestricted) {
                     throwErrorTolerant(firstRestricted, Messages.StrictOctalLiteral);
@@ -6324,7 +6324,7 @@ parseYieldExpression: true
                 break;
             }
             directive = source.slice(token.range[0] + 1, token.range[1] - 1);
-            if (directive === 'use strict') {
+            if (directive === 'use ' + 'strict') {
                 strict = true;
                 if (firstRestricted) {
                     throwErrorTolerant(firstRestricted, Messages.StrictOctalLiteral);
@@ -9774,7 +9774,7 @@ define(function (_dereq_, exports, module) {
 
 /*jslint node: true */
 /*global module, process */
-'use strict';
+'use ' + 'strict';
 
 /**
  * Creates a define for node.
@@ -9787,7 +9787,7 @@ define(function (_dereq_, exports, module) {
  * module.
  */
 function amdefine(module, requireFn) {
-    'use strict';
+    'use ' + 'strict';
     var defineCache = {},
         loaderCache = {},
         alreadyCalled = false,
@@ -10231,7 +10231,7 @@ function traverse(node, path, state) {
         || node.body.length > 0
            && node.body[0].type === Syntax.ExpressionStatement
            && node.body[0].expression.type === Syntax.Literal
-           && node.body[0].expression.value === 'use strict';
+           && node.body[0].expression.value === 'use ' + 'strict';
 
       if (node.type === Syntax.Program) {
         state = utils.updateState(state, {
@@ -11022,7 +11022,7 @@ exports.visitorList = [
 /**
  * @typechecks
  */
-'use strict';
+'use ' + 'strict';
 
 var base62 = _dereq_('base62');
 var Syntax = _dereq_('esprima-fb').Syntax;
@@ -11639,7 +11639,7 @@ exports.visitorList = [
 /**
  * @typechecks
  */
-'use strict';
+'use ' + 'strict';
 
 var Syntax = _dereq_('esprima-fb').Syntax;
 var utils = _dereq_('../src/utils');
@@ -11785,7 +11785,7 @@ exports.visitorList = [
 /* jshint browser: true */
 /* jslint evil: true */
 
-'use strict';
+'use ' + 'strict';
 var runScripts;
 var headEl;
 
