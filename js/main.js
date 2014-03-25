@@ -7,7 +7,7 @@ require.config({
   }
 });
 
-define(['react', 'jsx!components/Timer'], function(React, Timer) {
+require(['react', 'jsx!components/Timer'], function(React, Timer) {
   var start = new Date();
 
   // Mount the JSX component in the app container
