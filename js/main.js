@@ -4,6 +4,10 @@ require.config({
   paths: {
     "react": "react-with-addons-0.10.0",
     "JSXTransformer": "JSXTransformer-0.10.0"
+  },
+
+  jsx: {
+    fileExtension: '.jsx'
   }
 });
 
