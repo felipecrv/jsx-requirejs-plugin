@@ -50,6 +50,18 @@ The Plugin is then going to load the JavaScript source file
 `components/Timer.js`, parse it with Facebook's JSXTransformer and execute the
 resulting JavaScript source.
 
+To make it load a file with a `.jsx` extension (`components/Timer.jsx`) add the following parameter to the RequireJS config object:
+
+    require.config({
+      // ...
+
+      jsx: {
+        fileExtension: '.jsx'
+      }
+
+      // ...
+    });
+
 ## Build <a name="build"></a>
 
 Some specific configuration is necessary to make optimization by `r.js`
