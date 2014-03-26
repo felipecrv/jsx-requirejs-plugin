@@ -31,6 +31,8 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
     version: '0.1.1',
 
     load: function (name, req, onLoadNative, config) {
+      var fileExtension = config.jsx && config.jsx.fileExtension || '.js';
+
       var onLoad = function(content) {
         try {
           if (-1 === content.indexOf('@jsx React.DOM')) {
@@ -48,7 +50,7 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
         onLoadNative.fromText(content);
       };
 
-      text.load(name + '.js', req, onLoad, config);
+      text.load(name + fileExtension, req, onLoad, config);
     },
 
     write: function (pluginName, moduleName, write) {
