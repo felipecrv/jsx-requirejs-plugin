@@ -62,9 +62,11 @@ the optimized JavaScript.
       return singleContents.replace(/jsx!/g, '');
     },
 
-To exclude `jsx.js` and, more importantly `JSXTransformer.js` due to its size,
-you should add `"jsx"` to the `exclude` list in the `modules` field of the
-`build.js` like this:
+To exclude `jsx.js` and, more importantly `JSXTransformer.js`, you should add
+`"jsx"` to the `exclude` list in the `modules` field of the `build.js`.
+`JSXTransformer.js` (dependency of `jsx`) gets excluded by excluding `jsx`.
+
+Add `"react"` if you want it to be in it's own build file.
 
     modules: [
       {
