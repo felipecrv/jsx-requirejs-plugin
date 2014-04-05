@@ -28,7 +28,7 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
   var buildMap = {};
 
   var jsx = {
-    version: '0.2.0',
+    version: '0.2.1',
 
     load: function (name, req, onLoadNative, config) {
       var fileExtension = config.jsx && config.jsx.fileExtension || '.js';
@@ -47,7 +47,7 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
           buildMap[name] = content;
         } else {
           content += "\n//# sourceURL=" + location.protocol + "//" + location.hostname +
-            config.baseUrl + name + ".jsx";
+            config.baseUrl + name + fileExtension;
         }
 
         onLoadNative.fromText(content);
