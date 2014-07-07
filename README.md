@@ -13,7 +13,7 @@ with [RequireJS](http://requirejs.org).
 Download the plugin
 [jsx](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/jsx.js)
 and the modified
-[JSXTransformer](https://raw.github.com/alirussell/jsx-requirejs-plugin/master/js/JSXTransformer-0.10.0.js).
+[JSXTransformer](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.10.0.js).
 
 Place this in the directory that is your
 [baseUrl](http://requirejs.org/docs/api.html#config-baseUrl) for your project,
