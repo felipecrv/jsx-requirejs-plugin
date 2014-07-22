@@ -15,6 +15,10 @@
   modules: [
     {
       name: "main",
+      exclude: ["react", "jsx", "MyControllers"]
+    },
+    {
+      name: "MyControllers",
       exclude: ["react", "jsx"]
     }
   ]
