@@ -6153,7 +6153,7 @@ parseYieldExpression: true
                 break;
             }
             directive = source.slice(token.range[0] + 1, token.range[1] - 1);
-            if (directive === 'use strict') {
+            if (directive === 'use ' + 'strict') {
                 strict = true;
                 if (firstRestricted) {
                     throwErrorTolerant(firstRestricted, Messages.StrictOctalLiteral);
@@ -6741,7 +6741,7 @@ parseYieldExpression: true
                 break;
             }
             directive = source.slice(token.range[0] + 1, token.range[1] - 1);
-            if (directive === 'use strict') {
+            if (directive === 'use ' + 'strict') {
                 strict = true;
                 if (firstRestricted) {
                     throwErrorTolerant(firstRestricted, Messages.StrictOctalLiteral);
@@ -10283,7 +10283,7 @@ function traverse(node, path, state) {
         || node.body.length > 0
            && node.body[0].type === Syntax.ExpressionStatement
            && node.body[0].expression.type === Syntax.Literal
-           && node.body[0].expression.value === 'use strict';
+           && node.body[0].expression.value === 'use ' + 'strict';
 
       if (node.type === Syntax.Program) {
         state = utils.updateState(state, {
@@ -11444,7 +11444,7 @@ function visitClassFunctionExpression(traverse, node, path, state) {
   utils.catchupWhiteSpace(node.body.range[0], state);
   utils.append('{', state);
   if (!state.scopeIsStrict) {
-    utils.append('"use strict";', state);
+    utils.append('"use ' + 'strict";', state);
     state = utils.updateState(state, {
       scopeIsStrict: true
     });
@@ -11560,7 +11560,7 @@ function _renderClassBody(traverse, node, path, state) {
   if (!node.body.body.filter(_isConstructorMethod).pop()) {
     utils.append('function ' + className + '(){', state);
     if (!state.scopeIsStrict) {
-      utils.append('"use strict";', state);
+      utils.append('"use ' + 'strict";', state);
     }
     if (superClass.name) {
       utils.append(
@@ -12456,7 +12456,9 @@ function transformReact(source, options) {
   }
 
   return transform(visitorList, source, {
-    sourceMap: supportsAccessors
+    // @philix: sourceMap support breaks r.js optimization. Leave it off by
+    // default.
+    sourceMap: false
   });
 }
 
