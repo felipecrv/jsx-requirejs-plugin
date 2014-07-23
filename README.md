@@ -13,7 +13,7 @@ with [RequireJS](http://requirejs.org).
 Download the plugin
 [jsx](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/jsx.js)
 and the modified
-[JSXTransformer](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.10.0.js).
+[JSXTransformer](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.11.0.js).
 
 Place this in the directory that is your
 [baseUrl](http://requirejs.org/docs/api.html#config-baseUrl) for your project,
@@ -25,15 +25,15 @@ reimplementation of loading logic, so it should be installed as well.
 ## Usage <a name="usage"></a>
 
 First, you need to configure RequireJS to use Facebook's
-[JSXTransformer](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.10.0.js)
+[JSXTransformer](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.11.0.js)
 and [React](http://facebook.github.io/react/index.html):
 
     require.config({
       // ...
 
       paths: {
-        "react": "react-0.10.0",
-        "JSXTransformer": "JSXTransformer-0.10.0"
+        "react": "react-0.11.0",
+        "JSXTransformer": "JSXTransformer-0.11.0"
       }
 
       // ...
@@ -43,7 +43,7 @@ Then, you can reference JSX files via the `jsx!` plugin syntax. For example, to 
 the `Timer.jsx` file that is in a `components` directory:
 
     require(['jsx!components/Timer'], function (Timer) {
-    
+
     });
 
 The Plugin is then going to load the JavaScript source file
@@ -94,5 +94,5 @@ script errors in resulting files. A simple solution to this is replacing
 occurrences of `'use strict'` by an expression like `'use ' + 'strict'`.
 
 You don't have to do it if you use the
-[JSXTransformer-0.10.0.js](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.10.0.js)
+[JSXTransformer-0.11.0.js](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.11.0.js)
 provided here.
