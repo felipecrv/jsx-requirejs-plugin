@@ -1,0 +1,10 @@
+{
+  "name"          : "jsx-requires-plugin",
+  "version"       : "0.2.2",
+  "main"          : "js/jsx.js",
+  "dependencies"  : {
+    "react"  : ">=0.11.1",
+    "requirejs-text" : ">=2.0.12"
+  },
+  "ignore"        : ["build.js", "r.js","js/components","js/main.js","js/react-with-addons-0.11.0.js","js/require.js","js/text.js"]
+}
