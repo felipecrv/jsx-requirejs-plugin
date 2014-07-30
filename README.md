@@ -32,7 +32,7 @@ and [React](http://facebook.github.io/react/index.html):
       // ...
 
       paths: {
-        "react": "react-0.11.0",
+        "react": "react-0.11.1",
         "JSXTransformer": "JSXTransformer-0.11.1"
       }
 
