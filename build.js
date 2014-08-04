@@ -8,10 +8,6 @@
 
   mainConfigFile: "./js/main.js",
 
-  onBuildWrite: function (moduleName, path, singleContents) {
-    return singleContents.replace(/jsx!/g, '');
-  },
-
   modules: [
     {
       name: "main",
