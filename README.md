@@ -28,23 +28,27 @@ First, you need to configure RequireJS to use Facebook's
 [JSXTransformer](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.11.0.js)
 and [React](http://facebook.github.io/react/index.html):
 
-    require.config({
-      // ...
+```javascript
+require.config({
+	// ...
 
-      paths: {
-        "react": "react-0.11.0",
-        "JSXTransformer": "JSXTransformer-0.11.0"
-      }
+	paths: {
+		"react": "react-0.11.0",
+		"JSXTransformer": "JSXTransformer-0.11.0"
+	}
 
-      // ...
-    });
+	// ...
+});
+```
 
 Then, you can reference JSX files via the `jsx!` plugin syntax. For example, to load
 the `Timer.jsx` file that is in a `components` directory:
 
-    require(['jsx!components/Timer'], function (Timer) {
+```javascript
+require(['jsx!components/Timer'], function (Timer) {
 
-    });
+});
+```
 
 The Plugin is then going to load the JavaScript source file
 `components/Timer.jsx`, parse it with Facebook's JSXTransformer and execute the
@@ -52,15 +56,17 @@ resulting JavaScript source.
 
 To make it load a file with a `.jsx` extension (`components/Timer.jsx`) add the following parameter to the RequireJS config object:
 
-    require.config({
-      // ...
+```javascript
+require.config({
+  // ...
 
-      jsx: {
-        fileExtension: '.jsx'
-      }
+  jsx: {
+    fileExtension: '.jsx'
+  }
 
-      // ...
-    });
+  // ...
+});
+```
 
 ## Build <a name="build"></a>
 
@@ -70,9 +76,11 @@ possible.
 In your `build.js` you should have this to remove `jsx!` from module names in
 the optimized JavaScript.
 
-    onBuildWrite: function (moduleName, path, singleContents) {
-      return singleContents.replace(/jsx!/g, '');
-    },
+```javascript
+onBuildWrite: function (moduleName, path, singleContents) {
+  return singleContents.replace(/jsx!/g, '');
+},
+```
 
 To exclude `jsx.js` and, more importantly `JSXTransformer.js`, you should add
 `"jsx"` to the `exclude` list in the `modules` field of the `build.js`.
@@ -80,12 +88,14 @@ To exclude `jsx.js` and, more importantly `JSXTransformer.js`, you should add
 
 Add `"react"` if you want it to be in it's own build file.
 
-    modules: [
-      {
-        name: "main",
-        exclude: ["react", "jsx"]
-      }
-    ]
+```javascript
+modules: [
+  {
+    name: "main",
+    exclude: ["react", "jsx"]
+  }
+]
+```
 
 ### HACK to fix an issue with the preprocessing of JSXTransformer
 
