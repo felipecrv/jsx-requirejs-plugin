@@ -50,7 +50,11 @@ The Plugin is then going to load the JavaScript source file
 `components/Timer.jsx`, parse it with Facebook's JSXTransformer and execute the
 resulting JavaScript source.
 
-To make it load a file with a `.jsx` extension (`components/Timer.jsx`) add the following parameter to the RequireJS config object:
+## Configuration options <a name="options"></a>
+
+To load files containing JSX code with a specific extension
+(`components/Timer.jsx`) add the following parameter to the RequireJS config
+object:
 
     require.config({
       // ...
@@ -61,6 +65,13 @@ To make it load a file with a `.jsx` extension (`components/Timer.jsx`) add the 
 
       // ...
     });
+
+You can use the ES6 features supported by JSXTransformer by using the `harmony`
+option:
+
+    jsx: {
+      harmony: true
+    }
 
 ## Build <a name="build"></a>
 
