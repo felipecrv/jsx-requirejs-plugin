@@ -12454,7 +12454,9 @@ function transformReact(source, options) {
   }
 
   return transform(visitorList, source, {
-    sourceMap: supportsAccessors
+    // @philix: sourceMap support breaks r.js optimization. Leave it off by
+    // default.
+    sourceMap: false
   });
 }
 
