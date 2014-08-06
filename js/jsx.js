@@ -59,7 +59,7 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
     write: function (pluginName, moduleName, write) {
       if (buildMap.hasOwnProperty(moduleName)) {
         var content = buildMap[moduleName];
-        write.asModule(moduleName, content);
+        write.asModule(pluginName + "!" + moduleName, content);
       }
     }
   };
