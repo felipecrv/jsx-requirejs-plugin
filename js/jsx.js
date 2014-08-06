@@ -50,7 +50,13 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
             config.baseUrl + name + fileExtension;
         }
 
-        onLoadNative.fromText(content);
+        onLoadNative.fromText(name, content);
+
+        // load module so sub modules can be loaded
+        req([name], function (value) {
+            onLoadNative(value);
+        });
+
       };
 
       text.load(name + fileExtension, req, onLoad, config);
