@@ -52,7 +52,13 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
             config.baseUrl + name + fileExtension;
         }
 
-        onLoadNative.fromText(content);
+        onLoadNative.fromText(name, content);
+
+        // load module so sub modules can be loaded
+        req([name], function (value) {
+            onLoadNative(value);
+        });
+
       };
 
       text.load(name + fileExtension, req, onLoad, config);
@@ -61,7 +67,7 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
     write: function (pluginName, moduleName, write) {
       if (buildMap.hasOwnProperty(moduleName)) {
         var content = buildMap[moduleName];
-        write.asModule(moduleName, content);
+        write.asModule(pluginName + "!" + moduleName, content);
       }
     }
   };
