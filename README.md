@@ -72,7 +72,8 @@ You should also stub the module 'jsx' so it isn't loaded.
 
 Add `"react"` if you want it to be in it's own build file.
 
-    stubModules: ['jsx']
+    stubModules: ['jsx'],
+    
     modules: [
       {
         name: "main",
