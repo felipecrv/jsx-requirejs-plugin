@@ -65,10 +65,8 @@ To make it load a file with a `.jsx` extension (`components/Timer.jsx`) add the 
 ## Build <a name="build"></a>
 
 
-To exclude `jsx.js` and, more importantly `JSXTransformer.js`, you should add
-`"jsx"` to the `exclude` list in the `modules` field of the `build.js`.
-
-You should also stub the module 'jsx' so it isn't loaded.
+To exclude `jsx.js` to the build add `jsx` to the `stubModules` array and add it's dependencies (JSXTransformer, text) 
+to the `exclude` list in the `modules`  field of the `build.js`.
 
 Add `"react"` if you want it to be in it's own build file.
 
