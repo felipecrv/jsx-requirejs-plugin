@@ -64,28 +64,21 @@ To make it load a file with a `.jsx` extension (`components/Timer.jsx`) add the 
 
 ## Build <a name="build"></a>
 
-Some specific configuration is necessary to make optimization by `r.js`
-possible.
 
-In your `build.js` you should have this to remove `jsx!` from module names in
-the optimized JavaScript.
-
-    onBuildWrite: function (moduleName, path, singleContents) {
-      return singleContents.replace(/jsx!/g, '');
-    },
-
-To exclude `jsx.js` and, more importantly `JSXTransformer.js`, you should add
-`"jsx"` to the `exclude` list in the `modules` field of the `build.js`.
-`JSXTransformer.js` (dependency of `jsx`) gets excluded by excluding `jsx`.
+To exclude `jsx.js` to the build add `jsx` to the `stubModules` array and add it's dependencies (JSXTransformer, text) 
+to the `exclude` list in the `modules`  field of the `build.js`.
 
 Add `"react"` if you want it to be in it's own build file.
 
+    stubModules: ['jsx'],
+    
     modules: [
       {
         name: "main",
-        exclude: ["react", "jsx"]
+        exclude: ["react", "JSXTransformer", "text"]
       }
     ]
+
 
 ### HACK to fix an issue with the preprocessing of JSXTransformer
 
