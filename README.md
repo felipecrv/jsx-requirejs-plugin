@@ -77,7 +77,7 @@ Add `"react"` if you want it to be in it's own build file.
     modules: [
       {
         name: "main",
-        exclude: ["react", "jsx", "JSXTransformer"]
+        exclude: ["react", "JSXTransformer", "text"]
       }
     ]
 
