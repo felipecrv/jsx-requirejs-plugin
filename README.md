@@ -40,17 +40,19 @@ and [React](http://facebook.github.io/react/index.html):
     });
 
 Then, you can reference JSX files via the `jsx!` plugin syntax. For example, to load
-the `Timer.jsx` file that is in a `components` directory:
+the `Timer.js` file that is in a `components` directory:
 
     require(['jsx!components/Timer'], function (Timer) {
 
     });
 
 The Plugin is then going to load the JavaScript source file
-`components/Timer.jsx`, parse it with Facebook's JSXTransformer and execute the
+`components/Timer.js`, parse it with Facebook's JSXTransformer and execute the
 resulting JavaScript source.
 
-To make it load a file with a `.jsx` extension (`components/Timer.jsx`) add the following parameter to the RequireJS config object:
+## Configuration options <a name="options"></a>
+
+To load a file with a `.jsx` extension (`components/Timer.jsx`) add the following parameter to the RequireJS config object:
 
     require.config({
       // ...
@@ -61,6 +63,12 @@ To make it load a file with a `.jsx` extension (`components/Timer.jsx`) add the 
 
       // ...
     });
+
+You can use the ES6 features supported by JSXTransformer by using the `harmony` option:
+
+    jsx: {
+      harmony: true
+    }
 
 ## Build <a name="build"></a>
 
