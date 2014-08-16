@@ -66,6 +66,9 @@ object:
       // ...
     });
 
+The `.jsx` extension is used by default. `r.js` will get confused and fail to
+compile your JSX code if you use `.js`.
+
 You can use the ES6 features supported by JSXTransformer by using the `harmony`
 option:
 
