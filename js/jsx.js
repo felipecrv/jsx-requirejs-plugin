@@ -47,7 +47,7 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
 
         if (config.isBuild) {
           buildMap[name] = content;
-        } else {
+        } else if (typeof location !== 'undefined') { // Do not create sourcemap when loaded in Node
           content += "\n//# sourceURL=" + location.protocol + "//" + location.hostname +
             config.baseUrl + name + fileExtension;
         }
