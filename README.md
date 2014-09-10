@@ -28,6 +28,7 @@ First, you need to configure RequireJS to use Facebook's
 [JSXTransformer](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.11.1.js)
 and [React](http://facebook.github.io/react/index.html):
 
+```js
     require.config({
       // ...
 
@@ -38,13 +39,16 @@ and [React](http://facebook.github.io/react/index.html):
 
       // ...
     });
+```
 
 Then, you can reference JSX files via the `jsx!` plugin syntax. For example, to load
 the `Timer.jsx` file that is in a `components` directory:
 
+```js
     require(['jsx!components/Timer'], function (Timer) {
 
     });
+```
 
 The Plugin is then going to load the JavaScript source file
 `components/Timer.jsx`, parse it with Facebook's JSXTransformer and execute the
@@ -56,6 +60,7 @@ To load files containing JSX code with a specific extension
 (`components/Timer.jsx`) add the following parameter to the RequireJS config
 object:
 
+```js
     require.config({
       // ...
 
@@ -65,6 +70,7 @@ object:
 
       // ...
     });
+```
 
 The `.jsx` extension is used by default. `r.js` will get confused and fail to
 compile your JSX code if you use `.js`.
@@ -72,9 +78,11 @@ compile your JSX code if you use `.js`.
 You can use the ES6 features supported by JSXTransformer by using the `harmony`
 option:
 
+```js
     jsx: {
       harmony: true
     }
+```
 
 ## Build <a name="build"></a>
 
@@ -84,6 +92,7 @@ field of the `build.js`.
 
 Add `"react"` if you want it to be in it's own build file.
 
+```js
     stubModules: ['jsx'],
 
     modules: [
@@ -92,7 +101,7 @@ Add `"react"` if you want it to be in it's own build file.
         exclude: ["react", "JSXTransformer", "text"]
       }
     ]
-
+```
 
 ### HACK to fix an issue with the preprocessing of JSXTransformer
 
