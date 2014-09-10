@@ -1,19 +1,16 @@
 # jsx-requirejs-plugin
 
-A [RequireJS](http://requirejs.org) plugin for JavaScript files containing
-[JSX](http://facebook.github.io/react/docs/jsx-in-depth.html). It's
-[r.js](http://requirejs.org/docs/download.html#rjs) friendly (i.e. all
-files containing JSX will be pre-compiled during the r.js build).
+A [RequireJS][requirejs] plugin for JavaScript files containing [JSX][jsx]. It's
+[r.js][rjs] friendly (i.e. all files containing JSX will be pre-compiled during
+the r.js build).
 
-This is helpful when using [React](http://facebook.github.io/react/index.html)
-with [RequireJS](http://requirejs.org).
+This is helpful when using [React][react] with [RequireJS][requirejs].
 
 ## Install <a name="install"></a>
 
 Download the plugin
 [jsx](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/jsx.js)
-and the modified
-[JSXTransformer](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.11.1.js).
+and the modified [JSXTransformer][modifiedjsx].
 
 Place this in the directory that is your
 [baseUrl](http://requirejs.org/docs/api.html#config-baseUrl) for your project,
@@ -25,8 +22,8 @@ reimplementation of loading logic, so it should be installed as well.
 ## Usage <a name="usage"></a>
 
 First, you need to configure RequireJS to use Facebook's
-[JSXTransformer](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.11.1.js)
-and [React](http://facebook.github.io/react/index.html):
+[JSXTransformer][modifiedjsx] and
+[React](http://facebook.github.io/react/index.html):
 
 ```js
     require.config({
@@ -109,6 +106,11 @@ Add `"react"` if you want it to be in it's own build file.
 script errors in resulting files. A simple solution to this is replacing
 occurrences of `'use strict'` by an expression like `'use ' + 'strict'`.
 
-You don't have to do it if you use the
-[JSXTransformer-0.11.1.js](https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.11.1.js)
+You don't have to do it if you use the [JSXTransformer-0.11.1.js][modifiedjsx]
 provided here.
+
+[requirejs]: http://requirejs.org "RequireJS"
+[react]: http://facebook.github.io/react/index.html "React"
+[rjs]: http://requirejs.org/docs/download.html#rjs "r.js"
+[jsx]: http://facebook.github.io/react/docs/jsx-in-depth.html "JSX in Depth"
+[modifiedjsx]: https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.11.1.js "Modified JSXTransformer"
