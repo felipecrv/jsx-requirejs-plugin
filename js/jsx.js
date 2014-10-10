@@ -38,7 +38,7 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
       var onLoad = function(content) {
         try {
           if (-1 === content.indexOf('@jsx React.DOM')) {
-            content = "/** @jsx React.DOM */\n" + content;
+            content = '/** @jsx React.DOM */\n' + content;
           }
           content = JSXTransformer.transform(content, transformOptions).code;
         } catch (err) {
@@ -48,7 +48,7 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
         if (config.isBuild) {
           buildMap[name] = content;
         } else if (typeof location !== 'undefined') { // Do not create sourcemap when loaded in Node
-          content += "\n//# sourceURL=" + location.protocol + "//" + location.hostname +
+          content += '\n//# sourceURL=' + location.protocol + '//' + location.hostname +
             config.baseUrl + name + fileExtension;
         }
 
@@ -61,7 +61,7 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
     write: function (pluginName, moduleName, write) {
       if (buildMap.hasOwnProperty(moduleName)) {
         var content = buildMap[moduleName];
-        write.asModule(pluginName + "!" + moduleName, content);
+        write.asModule(pluginName + '!' + moduleName, content);
       }
     }
   };
