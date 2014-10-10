@@ -30,8 +30,8 @@ First, you need to configure RequireJS to use Facebook's
       // ...
 
       paths: {
-        "react": "react-0.11.1",
-        "JSXTransformer": "JSXTransformer-0.11.1"
+        "react": "react-0.11.2",
+        "JSXTransformer": "JSXTransformer-0.11.2"
       }
 
       // ...
@@ -106,11 +106,11 @@ Add `"react"` if you want it to be in it's own build file.
 script errors in resulting files. A simple solution to this is replacing
 occurrences of `'use strict'` by an expression like `'use ' + 'strict'`.
 
-You don't have to do it if you use the [JSXTransformer-0.11.1.js][modifiedjsx]
+You don't have to do it if you use the [JSXTransformer-0.11.2.js][modifiedjsx]
 provided here.
 
 [requirejs]: http://requirejs.org "RequireJS"
 [react]: http://facebook.github.io/react/index.html "React"
 [rjs]: http://requirejs.org/docs/download.html#rjs "r.js"
 [jsx]: http://facebook.github.io/react/docs/jsx-in-depth.html "JSX in Depth"
-[modifiedjsx]: https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.11.1.js "Modified JSXTransformer"
+[modifiedjsx]: https://raw.github.com/philix/jsx-requirejs-plugin/master/js/JSXTransformer-0.11.2.js "Modified JSXTransformer"
