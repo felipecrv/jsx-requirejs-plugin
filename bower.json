@@ -1,5 +1,5 @@
 {
-  "name"          : "jsx-requires-plugin",
+  "name"          : "jsx-requirejs-plugin",
   "version"       : "0.2.2",
   "main"          : "js/jsx.js",
   "dependencies"  : {
