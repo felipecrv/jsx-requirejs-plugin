@@ -1,9 +1,9 @@
 {
   "name"          : "jsx-requirejs-plugin",
-  "version"       : "0.2.2",
+  "version"       : "0.5.0",
   "main"          : "js/jsx.js",
   "dependencies"  : {
-    "react"  : ">=0.11.1",
+    "react"  : ">=0.12.0",
     "requirejs-text" : ">=2.0.12"
   },
   "ignore"        : ["build.js", "r.js","js/components","js/main.js","js/react-with-addons-0.11.0.js","js/require.js","js/text.js"]
