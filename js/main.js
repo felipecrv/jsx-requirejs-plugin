@@ -7,7 +7,9 @@ require.config({
   },
 
   jsx: {
-    fileExtension: '.jsx'
+    fileExtension: '.jsx',
+    harmony: true,
+    stripTypes: true
   }
 });
 
