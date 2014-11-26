@@ -81,6 +81,15 @@ option:
     }
 ```
 
+You can parse the `stripTypes` flag along for [Flow](http://flowtype.org) type
+annotations:
+
+```js
+    jsx: {
+      stripTypes: true
+    }
+```
+
 ## Build <a name="build"></a>
 
 To exclude `jsx.js` to the build add `jsx` to the `stubModules` array and add
