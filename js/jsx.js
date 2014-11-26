@@ -33,7 +33,9 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
     load: function (name, req, onLoadNative, config) {
       var fileExtension = config.jsx && config.jsx.fileExtension || '.js';
 
-      var transformOptions = (config.jsx && config.jsx.harmony) ? {harmony: true} : null;
+      var transformOptions = (config.jsx && (config.jsx.harmony || config.jsx.stripTypes))
+        ? {harmony: !!config.jsx.harmony, stripTypes: !!config.jsx.stripTypes}
+        : null;
 
       var onLoad = function(content) {
         try {
