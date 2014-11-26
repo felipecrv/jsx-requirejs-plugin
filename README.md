@@ -81,7 +81,7 @@ option:
     }
 ```
 
-You can parse the `stripTypes` flag along for [Flow](http://flowtype.org) type
+You can pass the `stripTypes` flag along for [Flow](http://flowtype.org) type
 annotations:
 
 ```js
