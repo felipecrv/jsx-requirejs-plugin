@@ -52,6 +52,10 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
         onLoadNative.fromText(content);
       };
 
+      onLoad.error = function(err) {
+        throw(err);
+      };
+
       text.load(name + fileExtension, req, onLoad, config);
     },
 
