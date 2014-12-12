@@ -31,9 +31,13 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
     version: '0.5.1',
 
     load: function (name, req, onLoadNative, config) {
-      var fileExtension = config.jsx && config.jsx.fileExtension || '.js';
+      var jsxOptions = config.jsx || {};
+      var fileExtension = jsxOptions.fileExtension || '.js';
 
-      var transformOptions = (config.jsx && config.jsx.harmony) ? {harmony: true} : null;
+      var transformOptions = {
+        harmony: !!jsxOptions.harmony,
+        stripTypes: !!jsxOptions.stripTypes
+      };
 
       var onLoad = function(content) {
         try {
