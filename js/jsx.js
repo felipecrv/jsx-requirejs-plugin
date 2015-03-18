@@ -28,7 +28,7 @@ define(['JSXTransformer', 'text'], function (JSXTransformer, text) {
   var buildMap = {};
 
   var jsx = {
-    version: '0.5.2',
+    version: '0.5.3',
 
     load: function (name, req, onLoadNative, config) {
       var jsxOptions = config.jsx || {};
