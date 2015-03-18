@@ -6,11 +6,9 @@ define(['react'], function(React) {
     render: function() {
       var elapsed = Math.round(this.props.elapsed  / 100);
       var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0' );
-      var message =
-        'React has been successfully running for ' + seconds + ' seconds.';
 
       // JSX code
-      return <p>{message}</p>;
+      return <p>React has been successfully running for {seconds} seconds.</p>;
     }
   });
 
@@ -22,7 +20,7 @@ define(['react'], function(React) {
       return {now: new Date()};
     },
 
-    componentDidMount: function(el, root) {
+    componentDidMount: function() {
       var that = this;
       setInterval(function() {
         that.setState({now: new Date()});
