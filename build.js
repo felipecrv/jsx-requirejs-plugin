@@ -8,12 +8,12 @@
 
   mainConfigFile: "./js/main.js",
 
-  stubModules: ['jsx'],
+  //stub jsx, text, jsxtransformer to ensure these plugins are not included in optimized file
+  stubModules: ['jsx', 'text', 'JSXTransformer'],
 
   modules: [
     {
-      name: "main",
-      exclude: ["react", "JSXTransformer", "text"]
+      name: "main"
     }
   ]
 })

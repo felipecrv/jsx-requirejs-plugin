@@ -92,22 +92,18 @@ annotations:
 
 ## Build <a name="build"></a>
 
-To exclude `jsx.js` to the build add `jsx` to the `stubModules` array and add
-it's dependencies (JSXTransformer, text) to the `exclude` list in the `modules`
-field of the `build.js`.
-
-Add `"react"` if you want it to be in it's own build file.
+If you are using r.js to optimize your application for production, add `text`, `jsx` and `JSXTransformer` to the `stubModules` array field of the `build.js`.
 
 ```js
-    stubModules: ['jsx'],
+    stubModules: ['jsx', 'text', 'JSXTransformer'],
 
     modules: [
       {
-        name: "main",
-        exclude: ["react", "JSXTransformer", "text"]
+        name: "main"
       }
     ]
 ```
+After successful optimization, all the jsx! files will be precompiled (converted from JSX -> JS) and will be added/optimized into the build file.
 
 ### HACK to fix an issue with the preprocessing of JSXTransformer
 
