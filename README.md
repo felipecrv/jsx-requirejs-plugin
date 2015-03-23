@@ -92,7 +92,7 @@ annotations:
 
 ## Build <a name="build"></a>
 
-If you are using r.js to optimize your application for production, `jsx` and `JSXTransformer` to the `stubModules` array field of the `build.js`.
+If you are using r.js to optimize your application for production, add `text, `jsx` and `JSXTransformer` to the `stubModules` array field of the `build.js`.
 
 ```js
     stubModules: ['jsx', 'text', 'JSXTransformer'],
@@ -103,7 +103,7 @@ If you are using r.js to optimize your application for production, `jsx` and `JS
       }
     ]
 ```
-After succesful optimization, all the jsx! files will be precompiled (converted from JSX -> JS) and will be added/optimized into the build file.
+After successful optimization, all the jsx! files will be precompiled (converted from JSX -> JS) and will be added/optimized into the build file.
 
 ### HACK to fix an issue with the preprocessing of JSXTransformer
 
