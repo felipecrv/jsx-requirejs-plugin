@@ -9991,7 +9991,7 @@ define('uglifyjs/parse-js', ["exports"], function(exports) {
           disclaimer in the documentation and/or other materials
           provided with the distribution.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER â€œAS ISâ€ AND ANY
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER "AS IS" AND ANY
     EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
     IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
     PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE
@@ -11442,7 +11442,7 @@ define('uglifyjs/process', ["require", "exports", "module", "./parse-js", "./squ
           disclaimer in the documentation and/or other materials
           provided with the distribution.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER â€œAS ISâ€ AND ANY
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER "AS IS" AND ANY
     EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
     IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
     PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE
@@ -15507,7 +15507,7 @@ define('uglifyjs2', ['exports', 'source-map', 'logger', 'env!env/file'], functio
           disclaimer in the documentation and/or other materials
           provided with the distribution.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER â€œAS ISâ€ AND ANY
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER "AS IS" AND ANY
     EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
     IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
     PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE
@@ -15810,7 +15810,7 @@ Dictionary.prototype = {
           disclaimer in the documentation and/or other materials
           provided with the distribution.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER â€œAS ISâ€ AND ANY
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER "AS IS" AND ANY
     EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
     IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
     PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE
@@ -16169,11 +16169,11 @@ var AST_Defun = DEFNODE("Defun", null, {
 /* -----[ JUMPS ]----- */
 
 var AST_Jump = DEFNODE("Jump", null, {
-    $documentation: "Base class for â€œjumpsâ€ (for now that's `return`, `throw`, `break` and `continue`)"
+    $documentation: "Base class for “jumps” (for now that's `return`, `throw`, `break` and `continue`)"
 }, AST_Statement);
 
 var AST_Exit = DEFNODE("Exit", "value", {
-    $documentation: "Base class for â€œexitsâ€ (`return` and `throw`)",
+    $documentation: "Base class for “exits” (`return` and `throw`)",
     $propdoc: {
         value: "[AST_Node?] the value returned or thrown by this statement; could be null for AST_Return"
     },
@@ -16234,7 +16234,7 @@ var AST_If = DEFNODE("If", "condition alternative", {
 var AST_Switch = DEFNODE("Switch", "expression", {
     $documentation: "A `switch` statement",
     $propdoc: {
-        expression: "[AST_Node] the `switch` â€œdiscriminantâ€"
+        expression: "[AST_Node] the `switch` “discriminant”"
     },
     _walk: function(visitor) {
         return visitor._visit(this, function(){
@@ -16421,7 +16421,7 @@ var AST_Seq = DEFNODE("Seq", "car cdr", {
 var AST_PropAccess = DEFNODE("PropAccess", "expression property", {
     $documentation: "Base class for property access expressions, i.e. `a.foo` or `a[\"foo\"]`",
     $propdoc: {
-        expression: "[AST_Node] the â€œcontainerâ€ expression",
+        expression: "[AST_Node] the “container” expression",
         property: "[AST_Node|string] the property to access.  For AST_Dot this is always a plain string, while for AST_Sub it's an arbitrary AST_Node"
     }
 });
@@ -16498,7 +16498,7 @@ var AST_Conditional = DEFNODE("Conditional", "condition consequent alternative",
 });
 
 var AST_Assign = DEFNODE("Assign", null, {
-    $documentation: "An assignment expression â€” `a = b + 5`",
+    $documentation: "An assignment expression — `a = b + 5`",
 }, AST_Binary);
 
 /* -----[ LITERALS ]----- */
@@ -16796,7 +16796,7 @@ TreeWalker.prototype = {
           disclaimer in the documentation and/or other materials
           provided with the distribution.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER â€œAS ISâ€ AND ANY
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER "AS IS" AND ANY
     EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
     IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
     PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE
@@ -17444,7 +17444,7 @@ function parse($TEXT, options) {
         if (is(type, val)) {
             return next();
         }
-        token_error(S.token, "Unexpected token " + S.token.type + " Â«" + S.token.value + "Â»" + ", expected " + type + " Â«" + val + "Â»");
+        token_error(S.token, "Unexpected token " + S.token.type + " «" + S.token.value + "»" + ", expected " + type + " «" + val + "»");
     };
 
     function expect(punc) { return expect_token("punc", punc); };
@@ -18247,7 +18247,7 @@ function parse($TEXT, options) {
           disclaimer in the documentation and/or other materials
           provided with the distribution.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER â€œAS ISâ€ AND ANY
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER "AS IS" AND ANY
     EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
     IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
     PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE
@@ -18466,7 +18466,7 @@ TreeTransformer.prototype = new TreeWalker;
           disclaimer in the documentation and/or other materials
           provided with the distribution.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER â€œAS ISâ€ AND ANY
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER "AS IS" AND ANY
     EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
     IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
     PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE
@@ -19035,7 +19035,7 @@ AST_Toplevel.DEFMETHOD("scope_warnings", function(options){
           disclaimer in the documentation and/or other materials
           provided with the distribution.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER â€œAS ISâ€ AND ANY
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER "AS IS" AND ANY
     EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
     IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
     PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE
@@ -19295,7 +19295,7 @@ function OutputStream(options) {
                 (!name && token.type == "name") ? token.value : name
             );
         } catch(ex) {
-            AST_Node.warn("Couldn't figure out mapping for {file}:{line},{col} â†’ {cline},{ccol} [{name}]", {
+            AST_Node.warn("Couldn't figure out mapping for {file}:{line},{col} → {cline},{ccol} [{name}]", {
                 file: token.file,
                 line: token.line,
                 col: token.col,
@@ -19566,19 +19566,19 @@ function OutputStream(options) {
 
     PARENS([ AST_Assign, AST_Conditional ], function (output){
         var p = output.parent();
-        // !(a = false) â†’ true
+        // !(a = false) → true
         if (p instanceof AST_Unary)
             return true;
-        // 1 + (a = 2) + 3 â†’ 6, side effect setting a = 2
+        // 1 + (a = 2) + 3 → 6, side effect setting a = 2
         if (p instanceof AST_Binary && !(p instanceof AST_Assign))
             return true;
-        // (a = func)() â€”orâ€” new (a = Object)()
+        // (a = func)() —or— new (a = Object)()
         if (p instanceof AST_Call && p.expression === this)
             return true;
         // (a = foo) ? bar : baz
         if (p instanceof AST_Conditional && p.condition === this)
             return true;
-        // (a = foo)["prop"] â€”orâ€” (a = foo).prop
+        // (a = foo)["prop"] —or— (a = foo).prop
         if (p instanceof AST_PropAccess && p.expression === this)
             return true;
     });
@@ -20343,7 +20343,7 @@ function OutputStream(options) {
           disclaimer in the documentation and/or other materials
           provided with the distribution.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER â€œAS ISâ€ AND ANY
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER "AS IS" AND ANY
     EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
     IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
     PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE
@@ -21731,7 +21731,7 @@ merge(Compressor.prototype, {
         if (!compressor.option("conditionals")) return self;
         // if condition can be statically determined, warn and drop
         // one of the blocks.  note, statically determined implies
-        // â€œhas no side effectsâ€; also it doesn't work for cases like
+        // “has no side effects”; also it doesn't work for cases like
         // `x && true`, though it probably should.
         var cond = self.condition.evaluate(compressor);
         self.condition = cond[0];
@@ -22753,7 +22753,7 @@ merge(Compressor.prototype, {
           disclaimer in the documentation and/or other materials
           provided with the distribution.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER â€œAS ISâ€ AND ANY
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER "AS IS" AND ANY
     EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
     IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
     PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE
@@ -22841,7 +22841,7 @@ function SourceMap(options) {
           disclaimer in the documentation and/or other materials
           provided with the distribution.
 
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER â€œAS ISâ€ AND ANY
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER "AS IS" AND ANY
     EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
     IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
     PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE
