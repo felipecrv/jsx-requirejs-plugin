@@ -92,7 +92,7 @@ annotations:
 
 ## Build <a name="build"></a>
 
-If you are using r.js to optimize your application for production, add `text, `jsx` and `JSXTransformer` to the `stubModules` array field of the `build.js`.
+If you are using r.js to optimize your application for production, add `text`, `jsx` and `JSXTransformer` to the `stubModules` array field of the `build.js`.
 
 ```js
     stubModules: ['jsx', 'text', 'JSXTransformer'],
